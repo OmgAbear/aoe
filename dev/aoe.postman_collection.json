@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "6425cb30-369d-4143-824f-d8eec53d3ff6",
+		"name": "aoe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"OmgAbear\",\n    \"identity\": {\n        \"firstName\":\"sebastian\",\n        \"lastName\": \"ilie\"\n    },\n    \"birthday\":\"1989-14-12\",\n    \"superpowers\": [\"engineering\", \"motorcycles\", \"charcuterie\", \"steaks\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/superhero",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"superhero"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read with encrypted true and superpower filtering",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"sebastian\",\n    \"identity\": {\n        \"firstName\":\"sebastian\",\n        \"lastName\": \"ilie\"\n    },\n    \"birthday\":\"1989-14-12\",\n    \"superpowers\": [\"engineering\", \"motorcycles\", \"charcuterie\", \"steaks\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/superhero?&encrypted=true&superpowers=flight&superpowers=healing",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"superhero"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "encrypted",
+							"value": "true"
+						},
+						{
+							"key": "superpowers",
+							"value": "flight"
+						},
+						{
+							"key": "superpowers",
+							"value": "healing"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
