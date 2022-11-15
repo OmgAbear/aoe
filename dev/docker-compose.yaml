@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: ./dev/Dockerfile
+    container_name: "aoe-coding"
+    environment:
+      - HERO_FILE_ENV=/app/static/superheroes.json
+      - ENV_SHIFT_BY=5
+    ports:
+      - "8080:8080"
